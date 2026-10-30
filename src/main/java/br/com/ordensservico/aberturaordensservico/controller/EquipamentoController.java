@@ -30,7 +30,7 @@ public class EquipamentoController {
 
     @PostMapping 
     public ResponseEntity<Equipamento> cadastrar(
-             @RequestBody Equipamento equipamento) {
+             @Valid @RequestBody Equipamento equipamento) {
                 
         Equipamento equipamentoCadastrado = equipamentoService.cadastrar(equipamento);
 
