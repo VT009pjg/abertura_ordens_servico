@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity 
 @Table (name = "equipamento")
@@ -18,8 +20,14 @@ public class Equipamento {
     
     @ManyToOne 
     @JoinColumn (name = "setor_id", referencedColumnName = "id")
+    
+    @NotNull(message = "Setor do equipamento é obrigatório!")
     private Setor setor;
+
+    @NotBlank(message = "Nome do equipamento é obrigatório!")
     private String nome;
+
+    @NotBlank(message = "Número do patrimônio do equipamento é obrigatório!")
     private String numeroPatrimonio;
 
     public Equipamento() {
