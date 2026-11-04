@@ -4,17 +4,17 @@ public class EquipamentoRequest {
 
     private String nome;
     private String numeroPatrimonio;
-    private Integer setor;
+    private Integer setorId;
 
     public EquipamentoRequest() {
     }
 
-    public Integer getSetor() {
-        return setor;
+    public Integer getSetorId() {
+        return setorId;
     }
 
-    public void setSetor(Integer setor) {
-        this.setor = setor;
+    public void setSetorId(Integer setorId) {
+        this.setorId = setorId;
     }
 
     public String getNumeroPatrimonio() {
