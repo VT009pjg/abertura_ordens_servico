@@ -64,7 +64,7 @@ public class EquipamentoController {
     @PutMapping ("/{id}")
     public ResponseEntity<Equipamento> atualizar(
             @PathVariable Integer id,
-            @Valid @RequestBody Equipamento novosDados) {
+            @Valid @RequestBody EquipamentoRequest novosDados) {
 
         Optional<Equipamento> equipamentoAtualizado = equipamentoService.atualizar(id, novosDados);
 
@@ -85,7 +85,7 @@ public class EquipamentoController {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent().build();
     }
 
 }
