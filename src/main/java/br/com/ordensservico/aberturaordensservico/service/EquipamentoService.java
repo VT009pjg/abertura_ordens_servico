@@ -51,7 +51,7 @@ public class EquipamentoService {
     }
 
     public Optional<Equipamento> atualizar(
-            Integer id, Equipamento novosDados) {
+            Integer id, EquipamentoRequest novosDados) {
 
         Optional<Equipamento> equipamentoEncontrado = equipamentoRepository.findById(id);
 
@@ -63,7 +63,7 @@ public class EquipamentoService {
         Equipamento equipamento = equipamentoEncontrado.get();
 
         equipamento.setNome(novosDados.getNome());
-
+        equipamento.setNumeroPatrimonio(novosDados.getNumeroPatrimonio());
         return Optional.of(equipamentoRepository.save(equipamento));
     }
 

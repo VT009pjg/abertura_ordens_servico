@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity 
 @Table(name = "ordem_servico")
@@ -17,7 +18,8 @@ public class OrdemServico {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    
+    @NotBlank (message = "A descrição do problema é obrigatória!")
     private String descricao;
 
     private LocalDateTime dataAbertura;
@@ -25,7 +27,7 @@ public class OrdemServico {
     @ManyToOne 
     @JoinColumn (name = "equipamento_id")
     private Equipamento equipamento;
-
+   
     public OrdemServico() {
     }
 
